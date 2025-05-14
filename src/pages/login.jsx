@@ -14,6 +14,7 @@ const Login = () => {
 
 
         if (res) {
+            localStorage.setItem("access_token", res.token) // lưu token vào localStorage
             notification.success({
                 message: "login user",
                 description: "success"
