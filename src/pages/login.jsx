@@ -1,11 +1,13 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input, notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { loginApi } from '../util/api';
+import { AuthContext, AuthWrapper } from '../componnent/context/authContext';
 
 const Login = () => {
     const navigate = useNavigate();
+    const { setAuth } = useContext(AuthContext);
 
     const onFinish = async (values) => {
         const { email, password } = values;
